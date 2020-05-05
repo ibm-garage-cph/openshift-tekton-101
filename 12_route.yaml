@@ -1,0 +1,16 @@
+  
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+  labels:
+    chart: cloudnativesampleapp-1.0.0
+  name: cloudnative-sample
+  namespace: default
+spec:
+  host: cloudnativesampleapp-service-tekton-demo.cph-garage-roks-4-ddd93d3a0fef01f6b396b69d343df410-0000.osl01.containers.appdomain.cloud
+  port:
+    targetPort: 9080
+  to:
+    kind: Service
+    name: cloudnativesampleapp-service
